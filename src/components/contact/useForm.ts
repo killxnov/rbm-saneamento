@@ -16,7 +16,7 @@ const initialFormData: ContactFormData = {
   number: "",
   complement: "",
   neighborhood: "",
-  municipality: "Viamão",
+  municipality: "",
   serviceType: "Tratamento de Efluentes (ETEs)",
   urgency: "",
   preferredDateTime: "",

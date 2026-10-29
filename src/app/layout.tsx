@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ReactLenis } from "lenis/react";
+// 1. Faltava importar o componente aqui no topo (ajuste o caminho se necessário)
+import { FloatingWhatsApp } from "@/components/FloatingWhatsApp"; 
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,6 +24,9 @@ export default function RootLayout({
         <ReactLenis root>
           {children}
         </ReactLenis>
+        
+        {/* 2. Faltava a barra "/" no final para fechar a tag do botão */}
+        <FloatingWhatsApp />
       </body>
     </html>
   );

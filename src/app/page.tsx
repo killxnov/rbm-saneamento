@@ -17,11 +17,8 @@ export default function Page() {
 
       <ContactForm />
       
-      {/* Próximas seções a serem desenvolvidas */}
       {/* <ServicesCarousel /> */}
       <Testimonials />
-
-      
 
       <FAQ />
 

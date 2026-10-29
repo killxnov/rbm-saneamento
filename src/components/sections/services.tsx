@@ -15,7 +15,6 @@ interface ServiceItem {
 }
 
 const servicesData: ServiceItem[] = [
-  
   {
     id: "manutencao",
     title: "Manutenção",
@@ -48,22 +47,12 @@ const servicesData: ServiceItem[] = [
 
 export function ServicesCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
-
   const activeService = servicesData[activeIndex];
 
-  const handleNext = () => {
-    setActiveIndex((prev) => (prev + 1) % servicesData.length);
-  };
-
-  const handlePrev = () => {
-    setActiveIndex((prev) => (prev - 1 + servicesData.length) % servicesData.length);
-  };
-
   return (
-    <section id="servicos" className="py-16 md:py-24 bg-background text-slate-900 border-t border-slate-200">
+    <section id="servicos" className="py-16 md:py-24 bg-slate-50 text-slate-900 border-t border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Cabeçalho */}
         <div className="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <span className="text-xs font-semibold tracking-wider text-blue-600 uppercase mb-1.5 block">
@@ -75,10 +64,8 @@ export function ServicesCarousel() {
           </div>
         </div>
 
-        {/* Grid Principal Compacto */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center bg-white p-5 sm:p-8 rounded-2xl border border-slate-200 shadow-sm">
           
-          {/* Lado Esquerdo: Informações */}
           <div className="lg:col-span-6 space-y-4">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold">
               {activeService.icon}
@@ -93,7 +80,6 @@ export function ServicesCarousel() {
               {activeService.description}
             </p>
 
-            {/* Lista de Recursos */}
             <div className="space-y-2 pt-1">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-600 block">
                 tipos de serviços incluídos:
@@ -107,22 +93,10 @@ export function ServicesCarousel() {
                 ))}
               </div>
             </div>
-
-            {/* Botão de Ação 
-            <div className="pt-2">
-              <Link
-                href="#contratar"
-                className="inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-5 py-3 text-xs sm:text-sm font-semibold text-white shadow-sm hover:bg-blue-700 transition-all active:scale-[0.99]"
-              >
-                <span>Solicitar Orçamento para este Serviço</span>
-                <ArrowRight className="size-4" />
-              </Link>
-            </div>*/}
           </div>
 
-          {/* Lado Direito: Imagem Compacta no Mobile */}
           <div className="lg:col-span-6">
-            <div className="relative aspect-[16/10] sm:aspect-[16/10] overflow-hidden rounded-xl border border-slate-100 shadow-sm bg-slate-100">
+            <div className="relative aspect-16/10 sm:aspect-16/10 overflow-hidden rounded-xl border border-slate-100 shadow-sm bg-slate-100">
               <img
                 src={activeService.image}
                 alt={activeService.title}
@@ -133,7 +107,6 @@ export function ServicesCarousel() {
 
         </div>
 
-        {/* Seletor de Abas na Base (Mais Compacto) */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
           {servicesData.map((service, index) => {
             const isSelected = activeIndex === index;
@@ -162,7 +135,6 @@ export function ServicesCarousel() {
             );
           })}
         </div>
-
       </div>
     </section>
   );
