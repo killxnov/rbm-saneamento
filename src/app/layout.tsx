@@ -9,7 +9,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "RBM Saneamento",
-  description: "Soluções completas de engenharia sanitária e tratamento de efluentes em Viamão.",
+  description: "Soluções completas de sanemeanto básico em Viamão.",
+  icons: {
+    icon: "/RS.svg",
+  }
 };
 
 export default function RootLayout({
