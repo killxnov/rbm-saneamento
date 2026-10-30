@@ -54,7 +54,7 @@ export function Footer() {
                 className="mt-0.5 size-4 shrink-0 text-blue-400"
                 aria-hidden="true"
               />
-              <span>Atendimento em todo o município de Viamão.</span>
+              <span>Atendimento em todo o município de Viamão/RS.</span>
             </div>
           </div>
 

@@ -38,7 +38,7 @@ export function Navbar() {
     { name: "Serviços", href: "#servicos" },
     { name: "Contratar", href: "#contratar" },
     { name: "Depoimentos", href: "#depoimentos" },
-    { name: "FAQ", href: "#faq" },
+    { name: "Perguntas frequentes", href: "#faq" },
   ];
 
   const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
