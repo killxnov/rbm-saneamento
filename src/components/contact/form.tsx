@@ -1,7 +1,7 @@
 "use client";
 
-import { ContactInfo } from "./Info";
-import { ContactFields } from "./ContactInput";
+import { ContactInfo } from "./info";
+import { ContactFields } from "./contactInput";
 import { PrivacyModal } from "./PrivacyModal";
 import { useContactForm } from "./useForm";
 
