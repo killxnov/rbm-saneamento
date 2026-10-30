@@ -91,7 +91,7 @@ export function Navbar() {
         {/* Desktop CTA - Instagram Puro */}
         <div className="hidden md:flex items-center gap-4 relative z-50">
           <a
-            href="https://instagram.com/seu.perfil"
+            href="https://www.instagram.com/rubem.do.saneamento"
             target="_blank"
             rel="noreferrer"
             aria-label="Visite nosso Instagram"
@@ -161,7 +161,7 @@ export function Navbar() {
               
               <div className="pt-4 mt-2 border-t border-white/10 flex justify-center">
                 <a
-                  href="https://instagram.com/seu.perfil"
+                  href="https://www.instagram.com/rubem.do.saneamento"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Visite nosso Instagram"

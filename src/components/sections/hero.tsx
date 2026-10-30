@@ -27,7 +27,7 @@ export function Hero() {
           </h1>
 
           <h2 className="mt-6 text-base sm:text-xl text-slate-300 max-w-2xl leading-relaxed">
-            Encanamento, limpeza de fossa, instalação de rede e manutenções hidráulicas em geral. Atendimento técnico especializado para resolver qualquer problema no seu imóvel.
+            Encanamento, limpeza de fossa, instalação de rede e manutenções hidráulicas em geral. Atendimento técnico especializado para resolver qualquer problema no seu imóvel ou microempreendimento.
           </h2>
 
           <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-6 sm:gap-4">

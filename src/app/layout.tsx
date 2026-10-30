@@ -8,7 +8,7 @@ import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Rubem Saneamento",
+  title: "RBM Saneamento",
   description: "Soluções completas de engenharia sanitária e tratamento de efluentes em Viamão.",
 };
 

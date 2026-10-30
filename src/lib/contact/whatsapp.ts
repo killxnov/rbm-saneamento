@@ -2,18 +2,26 @@ import { COMPANY_WHATSAPP } from "./constants";
 import type { ContactFormData } from "./types";
 
 export function openWhatsApp(data: ContactFormData): void {
-  let message =
-    `*Novo Orçamento / Lead (Site)*\n\n` +
-    `*Nome:* ${data.fullName}\n` +
-    `*CPF:* ${data.cpf}\n` +
-    `*Telefone:* ${data.phone}\n` +
-    `*E-mail:* ${data.email}\n` +
-    `*CEP:* ${data.cep}\n` +
-    `*Endereço:* ${data.street}, Nº ${data.number}${data.complement ? ` (Comp: ${data.complement})` : ""}\n` +
-    `*Bairro:* ${data.neighborhood}\n` +
-    `*Município:* ${data.municipality}\n` +
-    `*Serviço:* ${data.serviceType}\n` +
-    `*Urgência:* ${data.urgency}\n`;
+  let message = `*NOVO ORÇAMENTO / LEAD (SITE)*\n\n`;
+
+  // 1. DADOS
+  message += `*DADOS*\n` +
+             `*Nome:* ${data.fullName}\n` +
+             `*CPF:* ${data.cpf}\n\n`;
+
+  // 2. CONTATO
+  message += `*CONTATO*\n` +
+             `*Telefone:* ${data.phone}\n` +
+             `*E-mail:* ${data.email}\n\n`;
+
+  // 3. ENDEREÇO (Tudo junto na mesma linha para ficar compacto)
+  message += `*ENDEREÇO*\n` +
+             `*Local:* ${data.street}, Nº ${data.number}${data.complement ? ` (Comp: ${data.complement})` : ""} - ${data.neighborhood}, ${data.municipality} (CEP: ${data.cep})\n\n`;
+
+  // 4. CONTRATO
+  message += `*CONTRATO*\n` +
+             `*Serviço:* ${data.serviceType}\n` +
+             `*Urgência:* ${data.urgency}\n`;
 
   const requiresDateTime =
     data.urgency === "Não urgente (marcar uma data e hora)" ||
@@ -22,10 +30,12 @@ export function openWhatsApp(data: ContactFormData): void {
   if (requiresDateTime && data.preferredDateTime) {
     const [datePart, timePart] = data.preferredDateTime.split("T");
     const [year, month, day] = datePart.split("-");
-    message += `*Data/Hora Agendada:* ${day}/${month}/${year} às ${timePart}\n`;
+    message += `*Data Agendada:* ${day}/${month}/${year} às ${timePart}\n`;
   }
 
-  message += `*DETALHES:* ${data.message || "Não informado"}`;
+  // 5. DETALHES
+  message += `\n*💬 DETALHES*\n` +
+             `${data.message || "Não informado"}`;
   window.open(
     `https://wa.me/${COMPANY_WHATSAPP}?text=${encodeURIComponent(message)}`,
     "_blank",
