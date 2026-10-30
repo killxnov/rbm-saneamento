@@ -17,10 +17,8 @@ const navigationLinks = [
 ];
 
 const specialties = [
-  "Tratamento de efluentes",
-  "Redes de abastecimento",
-  "Laudos e licenciamento",
-  "Projetos hidráulicos",
+  "Manutenção hidráulica",
+  "Água e esgoto",
 ];
 
 export function Footer() {
@@ -151,9 +149,13 @@ export function Footer() {
 
           <p className="text-center">
             Desenvolvido por{" "}
-            <span className="text-slate-300">
+            <Link 
+            href="https://github.com/killxnov"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-300 underline">
               Daniel Batista dos Santos
-            </span>.
+            </Link>.
           </p>
 
           <Link
