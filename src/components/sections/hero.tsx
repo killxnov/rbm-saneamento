@@ -10,7 +10,7 @@ export function Hero() {
           alt="Infraestrutura de Saneamento e Engenharia Hídrica"
           className="h-full w-full object-cover object-center opacity-30 scale-105 transform transition-transform duration-1000"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/35 to-slate-950/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent" />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -34,14 +34,14 @@ export function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="#contratar"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-700 bg-[#2d6fffcc] px-8 py-4 text-sm font-semibold backdrop-blur-sm text-slate-200 transition-all hover:bg-blue-500 active:scale-95"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-blue-500 bg-blue-600 shadow-lg shadow-blue-900/40 px-8 py-4 text-sm font-semibold backdrop-blur-sm text-slate-200 transition-all hover:bg-blue-500 active:scale-95"
               >
                 Faça um orçamento
                 <ArrowRight className="size-4" />
               </Link>
               <Link
                 href="#servicos"
-                className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-700 bg-slate-900/10 px-8 py-4 text-sm font-semibold backdrop-blur-sm text-slate-200 transition-all hover:bg-slate-800/50 hover:text-white"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-slate-900/50 px-8 py-4 text-sm font-semibold backdrop-blur-sm text-slate-200 transition-all hover:bg-white/10 hover:text-white"
               >
                 Conheça nosso trabalho
               </Link>

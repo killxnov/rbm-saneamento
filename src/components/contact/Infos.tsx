@@ -20,7 +20,7 @@ export function ContactInfo() {
         */}
         <a href="mailto:dropxitado@gmail.com" className="flex items-start gap-4 cursor-pointer group">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 group-hover:bg-blue-200 dark:group-hover:bg-blue-900/50 transition-colors"><Mail className="size-5" /></div>
-          <div><h3 className="text-sm font-semibold text-slate-900 dark:text-white">E-mail</h3><p className="text-sm text-slate-600 dark:text-slate-400 mt-0.5">dropxitado@gmail.com</p></div>
+          <div><h3 className="text-sm font-semibold text-slate-900 dark:text-white">E-mail</h3><p className="text-sm text-slate-600 dark:text-slate-400 mt-0.5">contato@rbmsaneamento.com</p></div>
         </a>
         <div className="flex items-start gap-4">
           <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"><MapPin className="size-5" /></div>

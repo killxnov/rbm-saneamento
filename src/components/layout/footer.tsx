@@ -125,7 +125,7 @@ export function Footer() {
                 className="size-4 shrink-0 text-blue-400"
                 aria-hidden="true"
               />
-              <span>contato@rubemsaneamento.com</span>
+              <span>contato@rbmsaneamento.com</span>
               <ArrowUpRight
                 className="size-3.5 shrink-0 opacity-60 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                 aria-hidden="true"
