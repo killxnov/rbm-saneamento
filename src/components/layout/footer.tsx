@@ -116,14 +116,14 @@ export function Footer() {
             </p>
 
             <a
-              href="mailto:contato@rubemsaneamento.com"
+              href="mailto:rbmsaneamento@gmail.com"
               className="group inline-flex items-center gap-2 break-all text-sm text-slate-200 transition-colors hover:text-blue-400"
             >
               <Mail
                 className="size-4 shrink-0 text-blue-400"
                 aria-hidden="true"
               />
-              <span>contato@rbmsaneamento.com</span>
+              <span>rbmsaneamento@gmail.com</span>
               <ArrowUpRight
                 className="size-3.5 shrink-0 opacity-60 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                 aria-hidden="true"

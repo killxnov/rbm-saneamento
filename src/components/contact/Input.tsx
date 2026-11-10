@@ -267,72 +267,75 @@ export function ContactFields(props: Props) {
             </div>
           </div>
 
-          <div>
-            <label htmlFor="serviceType" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
-              Serviço de Interesse *
-            </label>
-            <div className="relative">
-              <select
-                id="serviceType"
-                name="serviceType"
-                value={formData.serviceType}
-                onChange={handleChange}
-                className={`w-full cursor-pointer appearance-none rounded-lg border px-4 py-2.5 text-sm transition-colors focus:outline-none focus:ring-1 [&>option]:bg-white dark:[&>option]:bg-slate-950 [&>option]:text-slate-900 dark:[&>option]:text-slate-100 ${
-                  errors.serviceType 
-                    ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500 bg-rose-50/30 dark:bg-rose-500/10 text-rose-900 dark:text-rose-200" 
-                    : "border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 focus:border-blue-600 dark:focus:border-blue-500 focus:ring-blue-600 dark:focus:ring-blue-500"
-                }`}
-              >
-                <option value="" disabled>Selecione o serviço...</option>
-                {serviceOptions.map((option) => (
-                  <option key={option} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </select>
-              <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 size-4 text-slate-500 dark:text-slate-400 pointer-events-none" />
+          {/* Serviço de interesse e urgência lado a lado no desktop */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div className="min-w-0">
+              <label htmlFor="serviceType" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                Serviço de Interesse *
+              </label>
+              <div className="relative">
+                <select
+                  id="serviceType"
+                  name="serviceType"
+                  value={formData.serviceType}
+                  onChange={handleChange}
+                  className={`w-full cursor-pointer appearance-none rounded-lg border px-4 py-2.5 text-sm transition-colors focus:outline-none focus:ring-1 [&>option]:bg-white dark:[&>option]:bg-slate-950 [&>option]:text-slate-900 dark:[&>option]:text-slate-100 ${
+                    errors.serviceType 
+                      ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500 bg-rose-50/30 dark:bg-rose-500/10 text-rose-900 dark:text-rose-200" 
+                      : "border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 focus:border-blue-600 dark:focus:border-blue-500 focus:ring-blue-600 dark:focus:ring-blue-500"
+                  }`}
+                >
+                  <option value="" disabled>Selecione o serviço...</option>
+                  {serviceOptions.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 size-4 text-slate-500 dark:text-slate-400 pointer-events-none" />
+              </div>
+              {errors.serviceType && (
+                <p className="mt-1.5 flex items-center gap-1.5 text-xs font-medium text-rose-600 dark:text-rose-400">
+                  <AlertCircle className="size-3.5 shrink-0" />
+                  {errors.serviceType}
+                </p>
+              )}
             </div>
-            {errors.serviceType && (
-              <p className="mt-1.5 flex items-center gap-1.5 text-xs font-medium text-rose-600 dark:text-rose-400">
-                <AlertCircle className="size-3.5 shrink-0" />
-                {errors.serviceType}
-              </p>
-            )}
+
+            {/* Urgência do Serviço */}
+            <div className="min-w-0">
+              <label htmlFor="urgency" className="block text-xs font-semibold uppercade tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
+                Gravidade do Serviço *
+              </label>
+              <div className="relative">
+                <select
+                  id="urgency"
+                  name="urgency"
+                  value={formData.urgency}
+                  onChange={handleChange}
+                  className={`w-full cursor-pointer appearance-none rounded-lg border px-4 py-2.5 text-sm transition-colors focus:outline-none focus:ring-1 [&>option]:bg-white dark:[&>option]:bg-slate-950 [&>option]:text-slate-900 dark:[&>option]:text-slate-100 ${
+                    errors.urgency
+                      ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500 bg-rose-50/30 dark:bg-rose-500/10 text-rose-900 dark:text-rose-200"
+                      : "border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 focus:border-blue-600 dark:focus:border-blue-500 focus:ring-blue-600 dark:focus:ring-blue-500"
+                  }`}
+                >
+                  <option value="" disabled>Selecione a gravidade...</option>
+                  <option value="Emergência">Emergência (o mais rápido possível)</option>
+                  <option value="Urgente (agendar para hoje ou amanhã)">Urgente (agendar para hoje ou amanhã)</option>
+                  <option value="Eletivo (marcar uma data e hora)">Eletivo (marcar uma data e hora)</option>
+                </select>
+                <ChevronDown className="absolute right-4 top-1/2 size-4 text-slate-500 dark:text-slate-400 -translate-y-1/2 pointer-events-none" />
+              </div>
+              {errors.urgency && (
+                <p className="mt-1.5 flex items-center gap-1.5 text-xs font-medium text-rose-600 dark:text-rose-400">
+                  <AlertCircle className="size-3.5 shrink-0" />
+                  {errors.urgency}
+                </p>
+              )}
+            </div>
           </div>
 
-          {/* Urgência do Serviço */}
-          <div>
-            <label htmlFor="urgency" className="block text-xs font-semibold uppercade tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
-              Urgencia do Serviço *
-            </label>
-            <div className="relative">
-              <select 
-              id="urgency"
-              name="urgency"
-              value={formData.urgency}
-              onChange={handleChange}
-              className={`w-full cursor-pointer appearance-none rounded-lg border px-4 py-2.5 text-sm transition-colors focus:outline-none focus:ring-1 [&>option]:bg-white dark:[&>option]:bg-slate-950 [&>option]:text-slate-900 dark:[&>option]:text-slate-100 ${
-                errors.urgency
-                  ? "border-rose-500 focus:border-rose-500 focus:ring-rose-500 bg-rose-50/30 dark:bg-rose-500/10 text-rose-900 dark:text-rose-200" 
-                  : "border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100 focus:border-blue-600 dark:focus:border-blue-500 focus:ring-blue-600 dark:focus:ring-blue-500"
-              }`}
-              >
-                <option value="" disabled>Selecione a urgência...</option>
-                <option value="Urgencia extrema">Urgência extrema (o mais rápido possível)</option>
-                <option value="Urgente (agendar para hoje ou amanhã)">Urgente (agendar para hoje ou amanhã)</option>
-                <option value="Não urgente (marcar uma data e hora)">Não urgente (marcar uma data e hora)</option>
-              </select>
-              <ChevronDown className="absolute right-4 top-1/2 size-4 text-slate-500 dark:text-slate-400 -translate-y-1/2 pointer-events-none" />
-            </div>
-            {errors.urgency && (
-              <p className="mt-1.5 flex items-center gap-1.5 text-xs font-medium text-rose-600 dark:text-rose-400">
-                <AlertCircle className="size-3.5 shrink-0" />
-                {errors.urgency}
-              </p>
-            )}
-          </div>
-
-          {(formData.urgency === "Não urgente (marcar uma data e hora)" || formData.urgency === "Urgente (agendar para hoje ou amanhã)") && (
+          {(formData.urgency === "Eletivo (marcar uma data e hora)" || formData.urgency === "Urgente (agendar para hoje ou amanhã)") && (
             <div className="animate-in fade-in slide-in-from-top-2">
               <label htmlFor="preferredDateTime" className="block text-xs font-semibold uppercase tracking-wider text-slate-700 dark:text-slate-300 mb-1.5">
                 Data e Hora Desejada *

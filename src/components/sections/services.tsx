@@ -132,7 +132,7 @@ export function ServicesCarousel() {
                   role="tab"
                   aria-selected={isSelected}
                   onClick={() => setActiveIndex(index)}
-                  className={`inline-flex items-center gap-3 px-5 py-3.5 rounded-xl border transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
+                  className={`inline-flex items-center cursor-pointer gap-3 px-5 py-3.5 rounded-xl border transition-all duration-300 outline-none focus-visible:ring-2 focus-visible:ring-blue-500 ${
                     isSelected
                       ? "bg-blue-600 border-blue-500 text-white shadow-lg shadow-blue-900/40"
                       : "bg-slate-900/50 border-white/10 text-slate-300 hover:bg-white/10 hover:text-white backdrop-blur-md"
@@ -185,7 +185,7 @@ export function ServicesCarousel() {
                 className="group inline-flex items-center justify-center gap-2 rounded-xl bg-blue-600 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-blue-900/40 transition-all hover:bg-blue-500 hover:shadow-blue-900/60 active:scale-[0.98] w-full sm:w-auto"
                 aria-label={`Solicitar orçamento para ${activeService.title}`}
               >
-                Solicitar orçamento
+                Ir para orçamento
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </a>
             </div>
