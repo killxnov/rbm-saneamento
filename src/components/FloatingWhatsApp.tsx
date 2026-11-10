@@ -5,7 +5,7 @@ import React from "react";
 export function FloatingWhatsApp() {
   // Substitua pelo número correto caso necessário
   const phoneNumber = "5551995225470"; 
-  const message = encodeURIComponent("Olá! Gostaria de falar com um especialista da Rubem Saneamento.");
+  const message = encodeURIComponent("Olá! Gostaria de falar com um especialista da RBM Saneamento.");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
   return (

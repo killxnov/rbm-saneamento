@@ -47,32 +47,42 @@ export function FAQ() {
         </div>
 
         <div className="space-y-4">
-          {faqItems.map((item, index) => (
-            <details
-              key={index}
-              open={openIndex === index}
-              className="group bg-white/5 rounded-2xl border border-white/10 shadow-sm overflow-hidden transition-all duration-200"
-            >
-              <summary 
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpenIndex(openIndex === index ? null : index);
-                }}
-                className="w-full flex items-center justify-between p-6 text-left focus:outline-none cursor-pointer list-none select-none" 
-                style={{ touchAction: 'manipulation' }}
+          {faqItems.map((item, index) => {
+            const isOpen = openIndex === index;
+            
+            return (
+              <div
+                key={index}
+                className="bg-white/5 rounded-2xl border border-white/10 shadow-sm overflow-hidden"
               >
-                <span className="font-semibold text-white text-base sm:text-lg pr-4">
-                  {item.question}
-                </span>
-                <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10 text-slate-400 transition-transform duration-200 group-open:rotate-180 group-open:bg-blue-500/20 group-open:text-blue-400">
-                  <ChevronDown className="size-5 pointer-events-none" />
+                <button 
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
+                  className="w-full flex items-center justify-between p-6 text-left focus:outline-none cursor-pointer select-none" 
+                  style={{ touchAction: 'manipulation' }}
+                >
+                  <span className="font-semibold text-white text-base sm:text-lg pr-4">
+                    {item.question}
+                  </span>
+                  <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10 text-slate-400 transition-all duration-300 ${
+                    isOpen ? "rotate-180 bg-blue-500/20 text-blue-400" : ""
+                  }`}>
+                    <ChevronDown className="size-5 pointer-events-none" />
+                  </div>
+                </button>
+                
+                {/* Contêiner com animação suave de altura que resolve o tranco no rodapé */}
+                <div className={`grid transition-all duration-300 ease-in-out ${
+                  isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                }`}>
+                  <div className="overflow-hidden">
+                    <div className="px-6 pb-6 pt-4 text-sm text-slate-400 leading-relaxed border-t border-white/10">
+                      <p>{item.answer}</p>
+                    </div>
+                  </div>
                 </div>
-              </summary>
-              <div className="px-6 pb-6 pt-4 text-sm text-slate-400 leading-relaxed border-t border-white/10">
-                <p>{item.answer}</p>
               </div>
-            </details>
-          ))}
+            );
+          })}
         </div>
 
       </div>

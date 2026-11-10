@@ -26,7 +26,7 @@ export function Footer() {
 
   return (
     <footer
-      className="border-t border-white/[0.08] bg-black text-slate-400"
+      className="border-t border-white/[0.08] bg-slate-900 text-slate-400"
       aria-label="Rodapé do site"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
